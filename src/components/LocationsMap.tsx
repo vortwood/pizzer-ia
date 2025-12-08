@@ -1,0 +1,156 @@
+'use client';
+
+export default function LocationsMap() {
+  const locations = [
+    {
+      id: 1,
+      name: 'Centro Comercial Plaza',
+      address: 'Av. Principal 123, Piso 2',
+      hours: '24/7',
+      status: 'Disponible',
+    },
+    {
+      id: 2,
+      name: 'Universidad Campus Norte',
+      address: 'Blvd. Universitario 456',
+      hours: '24/7',
+      status: 'Disponible',
+    },
+    {
+      id: 3,
+      name: 'Parque Central',
+      address: 'Calle del Parque 789',
+      hours: '24/7',
+      status: 'Disponible',
+    },
+  ];
+
+  return (
+    <section id="ubicaciones" className="py-24 md:py-32 section-dark relative overflow-hidden">
+      {/* Background gradient orbs */}
+      <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-orange-500/3 rounded-full blur-3xl" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <span className="inline-block text-orange-500 text-sm font-medium tracking-wider uppercase mb-4">
+            Ubicaciones
+          </span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight">
+            Encuentra tu <span className="text-gradient-orange">Máquina</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            Máquinas expendedoras de pizza artesanal. Pizza fresca en solo 3 minutos,
+            disponible las 24 horas del día, los 7 días de la semana.
+          </p>
+        </div>
+
+        {/* Map Container */}
+        <div className="glass-card overflow-hidden mb-10">
+          <div className="aspect-[16/9] md:aspect-[21/9] w-full relative">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8799441891517!2d-99.13558492494378!3d19.432607881863985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: 'grayscale(100%) invert(92%) contrast(90%)' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+          </div>
+        </div>
+
+        {/* Locations Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {locations.map((location) => (
+            <div
+              key={location.id}
+              className="glass-card p-6 group cursor-pointer"
+            >
+              <div className="flex items-start gap-4">
+                {/* Icon */}
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-orange-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-white text-lg mb-1 tracking-tight">
+                    {location.name}
+                  </h3>
+                  <p className="text-gray-500 text-sm mb-3">
+                    {location.address}
+                  </p>
+
+                  {/* Status & Hours */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-green-500 text-xs font-medium">
+                        {location.status}
+                      </span>
+                    </div>
+                    <span className="text-gray-600 text-xs">
+                      {location.hours}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Arrow */}
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-orange-500 transition-all duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-gray-500 group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-12">
+          <p className="text-gray-500 text-sm mb-6">
+            Próximamente más ubicaciones en tu ciudad
+          </p>
+          <button className="btn-secondary">
+            Notifícame de nuevas ubicaciones
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
