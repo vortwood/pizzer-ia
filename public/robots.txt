@@ -1,0 +1,20 @@
+# robots.txt for PizzerIA
+# Máquinas expendedoras de pizza 24/7 en Uruguay
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemaps
+Sitemap: https://pizzeria.com.uy/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Google bot specific
+User-agent: Googlebot
+Allow: /
+
+# Bing bot specific
+User-agent: Bingbot
+Allow: /

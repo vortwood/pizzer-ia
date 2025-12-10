@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ItalianTastes from "@/components/ItalianTastes";
 import CustomerFavorite from "@/components/CustomerFavorite";
 import LocationsMap from "@/components/LocationsMap";
+import FranchiseSection from "@/components/FranchiseSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <ItalianTastes />
         <CustomerFavorite />
         <LocationsMap />
+        <FranchiseSection />
       </main>
       <Footer />
     </>

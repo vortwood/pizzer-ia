@@ -18,9 +18,10 @@ export default function Header() {
 
   const navLinks = [
     { name: "Inicio", href: "#" },
-    { name: "Menú", href: "#menu" },
-    { name: "Nosotros", href: "#nosotros" },
+    { name: "Variedades", href: "#menu" },
+    { name: "Beneficios", href: "#nosotros" },
     { name: "Ubicaciones", href: "#ubicaciones" },
+    { name: "Franquicias", href: "#franquicias" },
   ];
 
   return (
@@ -37,7 +38,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <Image
               src="/logo/logo.png"
-              alt="Pizzer IA"
+              alt="PizzerIA - Máquinas expendedoras de pizza 24/7 en Uruguay"
               width={200}
               height={67}
               className="h-12 md:h-14 w-auto invert"

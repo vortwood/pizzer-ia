@@ -4,24 +4,19 @@ export default function LocationsMap() {
   const locations = [
     {
       id: 1,
-      name: 'Centro Comercial Plaza',
-      address: 'Av. Principal 123, Piso 2',
+      name: 'Maldonado Centro',
+      address: 'Primera máquina activa - Consultar ubicación exacta',
       hours: '24/7',
-      status: 'Disponible',
+      status: 'Operativa',
+      city: 'Maldonado'
     },
     {
       id: 2,
-      name: 'Universidad Campus Norte',
-      address: 'Blvd. Universitario 456',
+      name: 'Punta del Este',
+      address: 'Próximamente - En instalación',
       hours: '24/7',
-      status: 'Disponible',
-    },
-    {
-      id: 3,
-      name: 'Parque Central',
-      address: 'Calle del Parque 789',
-      hours: '24/7',
-      status: 'Disponible',
+      status: 'Próximamente',
+      city: 'Punta del Este'
     },
   ];
 
@@ -35,14 +30,15 @@ export default function LocationsMap() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-orange-500 text-sm font-medium tracking-wider uppercase mb-4">
-            Ubicaciones
+            Dónde Encontrarnos
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight">
-            Encuentra tu <span className="text-gradient-orange">Máquina</span>
+            <span className="text-gradient-orange">Maldonado</span> y <span className="text-gradient-orange">Punta del Este</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            Máquinas expendedoras de pizza artesanal. Pizza fresca en solo 3 minutos,
-            disponible las 24 horas del día, los 7 días de la semana.
+            Nuestras máquinas expendedoras automáticas de pizza 24/7 están disponibles en
+            ubicaciones estratégicas de Maldonado y Punta del Este. Pizza caliente al instante,
+            lista en 3 minutos, todos los días del año.
           </p>
         </div>
 
@@ -50,7 +46,7 @@ export default function LocationsMap() {
         <div className="glass-card overflow-hidden mb-10">
           <div className="aspect-[16/9] md:aspect-[21/9] w-full relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8799441891517!2d-99.13558492494378!3d19.432607881863985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209419.54392857428!2d-54.97764!3d-34.904722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9575723a8d4d6cd5%3A0x9d5c1b5a6f5b5c1a!2sMaldonado%2C%20Uruguay!5e0!3m2!1ses!2suy!4v1234567890123!5m2!1ses!2suy"
               width="100%"
               height="100%"
               style={{ border: 0, filter: 'grayscale(100%) invert(92%) contrast(90%)' }}
@@ -58,6 +54,7 @@ export default function LocationsMap() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full"
+              title="Ubicación de máquinas expendedoras PizzerIA en Maldonado y Punta del Este"
             />
             {/* Overlay gradient */}
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 via-transparent to-transparent" />
@@ -101,21 +98,23 @@ export default function LocationsMap() {
                   <h3 className="font-semibold text-white text-lg mb-1 tracking-tight">
                     {location.name}
                   </h3>
-                  <p className="text-gray-500 text-sm mb-3">
+                  <p className="text-gray-400 text-sm mb-3">
                     {location.address}
                   </p>
 
                   {/* Status & Hours */}
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-green-500 text-xs font-medium">
+                      <span className={`w-2 h-2 rounded-full ${location.status === 'Operativa' ? 'bg-green-500 animate-pulse' : 'bg-orange-500'}`} />
+                      <span className={`text-xs font-medium ${location.status === 'Operativa' ? 'text-green-500' : 'text-orange-500'}`}>
                         {location.status}
                       </span>
                     </div>
-                    <span className="text-gray-600 text-xs">
-                      {location.hours}
-                    </span>
+                    {location.status === 'Operativa' && (
+                      <span className="text-gray-500 text-xs">
+                        ⏰ {location.hours} - Siempre disponible
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -143,12 +142,19 @@ export default function LocationsMap() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <p className="text-gray-500 text-sm mb-6">
-            Próximamente más ubicaciones en tu ciudad
-          </p>
-          <button className="btn-secondary">
-            Notifícame de nuevas ubicaciones
-          </button>
+          <div className="glass-card p-8 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-semibold text-white mb-4">
+              ¿Querés una <span className="text-gradient-orange">Máquina PizzerIA</span> en tu local?
+            </h3>
+            <p className="text-gray-400 mb-6">
+              Estamos expandiendo con nuestro modelo de franquicia. Si tenés un negocio en
+              Maldonado, Punta del Este o alrededores, contactanos para saber más sobre cómo
+              agregar una máquina expendedora PizzerIA y generar ingresos pasivos 24/7.
+            </p>
+            <a href="#franquicias" className="btn-glossy inline-block">
+              Quiero una Máquina
+            </a>
+          </div>
         </div>
       </div>
     </section>

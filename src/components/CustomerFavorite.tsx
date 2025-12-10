@@ -5,81 +5,83 @@ import Image from "next/image";
 
 const categories = [
   { id: "all", name: "Todas" },
-  { id: "veg", name: "Vegetarianas" },
-  { id: "nonveg", name: "Con Carne" },
-  { id: "special", name: "Especiales" },
+  { id: "clasicas", name: "Clásicas" },
+  { id: "especiales", name: "Especiales" },
+  { id: "singluten", name: "Sin Gluten" },
 ];
 
 const pizzas = [
   {
     id: 1,
-    name: "Pizza Margarita",
-    description: "Tomate San Marzano, mozzarella di bufala, albahaca fresca",
-    price: 45,
-    originalPrice: 55,
+    name: "Muzzarella",
+    description: "Salsa de tomate, muzzarella de calidad, orégano. La clásica de siempre, perfecta para cualquier momento.",
+    price: 490,
     image: "/images/pizza-margherita.jpg",
-    category: "veg",
-    badge: "Popular",
+    category: "clasicas",
+    badge: "Clásica",
   },
   {
     id: 2,
-    name: "Pizza Pepperoni",
-    description: "Pepperoni artesanal, mozzarella, salsa de tomate",
-    price: 55,
-    originalPrice: 65,
-    image: "/images/pizza-pepperoni.jpg",
-    category: "nonveg",
-    badge: "Favorita",
+    name: "Napolitana",
+    description: "Salsa de tomate, muzzarella, tomate en rodajas, ajo, orégano. Sabor tradicional argentino.",
+    price: 490,
+    image: "/images/pizza-neapolitan.jpg",
+    category: "clasicas",
+    badge: "Popular",
   },
   {
     id: 3,
-    name: "Pizza Hawaiana",
-    description: "Jamón premium, piña caramelizada, queso fundido",
-    price: 50,
-    originalPrice: null,
-    image: "/images/pizza-hawaiian.jpg",
-    category: "nonveg",
+    name: "Pepperoni",
+    description: "Salsa de tomate, muzzarella, pepperoni premium. Ideal para los amantes del picante suave.",
+    price: 490,
+    image: "/images/pizza-pepperoni.jpg",
+    category: "clasicas",
     badge: null,
   },
   {
     id: 4,
-    name: "Pizza al Padellino",
-    description: "Estilo Turin, masa crujiente, cuatro quesos",
-    price: 60,
-    originalPrice: null,
+    name: "Fugazzeta",
+    description: "Muzzarella, cebolla salteada. Sabor único y auténtico, perfecta para fanáticos del queso.",
+    price: 490,
     image: "/images/pizza-cheese.jpg",
-    category: "special",
-    badge: "Premium",
+    category: "especiales",
+    badge: "Especial",
   },
   {
     id: 5,
-    name: "Pizza Napolitana",
-    description: "Anchoas, aceitunas negras, alcaparras, orégano",
-    price: 45,
-    originalPrice: 55,
-    image: "/images/pizza-neapolitan.jpg",
-    category: "veg",
+    name: "Jamón y Morrones",
+    description: "Salsa de tomate, muzzarella, jamón cocido, morrones asados. Combinación perfecta y equilibrada.",
+    price: 490,
+    image: "/images/pizza-hawaiian.jpg",
+    category: "especiales",
     badge: null,
   },
   {
     id: 6,
-    name: "Pizza Siciliana",
-    description: "Base gruesa, tomate cherry, ricotta, berenjenas",
-    price: 65,
-    originalPrice: null,
-    image: "/images/pizza-sicilian.jpg",
-    category: "special",
-    badge: "Chef",
+    name: "Cuatro Quesos",
+    description: "Muzzarella, provolone, parmesano, queso azul. Para los verdaderos amantes del queso.",
+    price: 490,
+    image: "/images/pizza-veggie.jpg",
+    category: "especiales",
+    badge: null,
   },
   {
     id: 7,
-    name: "Pizza Cuatro Quesos",
-    description: "Gorgonzola, parmesano, mozzarella, fontina",
-    price: 55,
-    originalPrice: null,
-    image: "/images/pizza-veggie.jpg",
-    category: "veg",
-    badge: null,
+    name: "Muzzarella Sin Gluten",
+    description: "Masa apta para celíacos, salsa de tomate, muzzarella, orégano. Rico y seguro para vos.",
+    price: 490,
+    image: "/images/pizza-margherita.jpg",
+    category: "singluten",
+    badge: "🌾 Sin Gluten",
+  },
+  {
+    id: 8,
+    name: "Napolitana Sin Gluten",
+    description: "Masa sin gluten, salsa de tomate, muzzarella, tomate, ajo. Sabor auténtico para celíacos.",
+    price: 490,
+    image: "/images/pizza-sicilian.jpg",
+    category: "singluten",
+    badge: "🌾 Sin Gluten",
   },
 ];
 
@@ -104,14 +106,17 @@ export default function CustomerFavorite() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-orange-500 text-sm font-medium tracking-wider uppercase mb-4">
-            Nuestro Menú
+            Variedades Disponibles
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white mb-6 tracking-tight">
-            Favoritos del <span className="text-gradient-orange">Cliente</span>
+            Todas a <span className="text-gradient-orange">$490</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            Las pizzas más solicitadas por nuestros clientes. Preparadas con los
-            mejores ingredientes y técnicas artesanales italianas.
+            Pizzas clásicas, especiales y opciones sin gluten. Todas al mismo precio,
+            horneadas al momento en nuestra máquina expendedora automática.
+            <span className="block mt-2 text-orange-500 font-medium">
+              🌾 Opciones sin gluten disponibles para celíacos
+            </span>
           </p>
         </div>
 
@@ -141,7 +146,7 @@ export default function CustomerFavorite() {
               <div className="relative aspect-square overflow-hidden rounded-t-[23px]">
                 <Image
                   src={pizza.image}
-                  alt={pizza.name}
+                  alt={`${pizza.name} - Pizza al paso $490 en máquina expendedora PizzerIA`}
                   fill
                   className="object-cover transition-transform duration-700 ease-out "
                 />
@@ -167,12 +172,22 @@ export default function CustomerFavorite() {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="font-semibold text-white text-lg mb-1 tracking-tight">
+                <h3 className="font-semibold text-white text-lg mb-2 tracking-tight">
                   {pizza.name}
                 </h3>
-                <p className="text-gray-500 text-sm mb-4 line-clamp-2">
+                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
                   {pizza.description}
                 </p>
+
+                {/* Price */}
+                <div className="flex items-center justify-between pt-3 border-t border-white/5">
+                  <span className="text-2xl font-semibold text-gradient-orange">
+                    ${pizza.price}
+                  </span>
+                  <span className="text-xs text-gray-500">
+                    Lista en 3min
+                  </span>
+                </div>
 
                 {/* Price */}
                 {/* <div className="flex items-center justify-between">
@@ -210,9 +225,11 @@ export default function CustomerFavorite() {
           ))}
         </div>
 
-        {/* View All Button */}
+        {/* Info footer */}
         <div className="text-center mt-16">
-          <button className="btn-glossy px-10">Ver Todo el Menú</button>
+          <p className="text-gray-400 text-sm">
+            Todas las pizzas disponibles 24/7 en nuestra máquina expendedora automática
+          </p>
         </div>
       </div>
     </section>

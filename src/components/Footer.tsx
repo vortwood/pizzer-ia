@@ -23,10 +23,15 @@ export default function Footer() {
           </Link>
 
           {/* Copyright */}
-          <p className="text-gray-500 text-sm text-center order-last md:order-none">
-            Copyright © {currentYear}. Todos los derechos reservados por{' '}
-            <span className="text-gradient-orange font-medium">Pizzer IA</span>
-          </p>
+          <div className="text-center order-last md:order-none">
+            <p className="text-gray-500 text-sm mb-2">
+              Copyright © {currentYear}. Todos los derechos reservados por{' '}
+              <span className="text-gradient-orange font-medium">PizzerIA</span>
+            </p>
+            <p className="text-gray-600 text-xs">
+              Máquinas expendedoras de pizza 24/7 | Maldonado • Punta del Este • Uruguay
+            </p>
+          </div>
 
           {/* Social Media */}
           <div className="flex items-center gap-4">
