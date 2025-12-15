@@ -7,7 +7,7 @@ export default function StructuredData() {
     "description": "Máquinas expendedoras automáticas de pizza 24/7 con inteligencia artificial en Maldonado y Punta del Este, Uruguay. Pizza caliente al instante, sin gluten disponible.",
     "url": "https://pizzeria.com.uy",
     "telephone": "+598-XX-XXX-XXX",
-    "servesCuisine": "Pizza",
+    "servesCuisine": ["Pizza", "Italian"],
     "priceRange": "$$",
     "acceptsReservations": "False",
     "address": {
@@ -40,7 +40,6 @@ export default function StructuredData() {
       "https://www.instagram.com/pizzeria"
     ],
     "menu": "https://pizzeria.com.uy#menu",
-    "servesCuisine": ["Pizza", "Italian"],
     "paymentAccepted": "Cash, Credit Card",
     "currenciesAccepted": "UYU"
   };

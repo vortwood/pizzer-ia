@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 md:pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-32 md:pt-20">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -31,11 +31,11 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left content */}
           <div className="text-center lg:text-left">
-            <div className="inline-block mb-6">
+            {/* <div className="inline-block mb-6">
               <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-medium bg-orange-500/10 backdrop-blur-sm border border-orange-500/20 text-orange-500 tracking-wider">
                 🤖 PIZZA + INTELIGENCIA ARTIFICIAL
               </span>
-            </div>
+            </div> */}
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-white mb-6 tracking-tight leading-[1.1]">
               Pizza <span className="text-gradient-orange">Caliente</span>
@@ -44,9 +44,12 @@ export default function Hero() {
             </h1>
 
             <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Máquinas expendedoras de pizza artesanal con inteligencia artificial.
-              Pizza caliente en 3 minutos, disponible las 24 horas en Maldonado y
-              Punta del Este. <span className="text-orange-500 font-medium">Ahora con opciones sin gluten.</span>
+              Máquinas expendedoras de pizza artesanal con inteligencia
+              artificial. Pizza caliente en 3 minutos, disponible las 24 horas
+              en Maldonado y Punta del Este.{" "}
+              <span className="text-orange-500 font-medium">
+                Ahora con opciones sin gluten.
+              </span>
             </p>
             {/* 
             <div className="flex flex-col sm:flex-row items-center gap-5 justify-center lg:justify-start">
@@ -100,11 +103,11 @@ export default function Hero() {
                   priority
                 />
                 {/* Glossy overlay */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/10 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 rounded-full bg-linear-to-b to-black/50 via pointer-events-none" />
               </div>
 
               {/* Price badge - glass card */}
-              <div className="absolute bottom-6 left-6 glass-card p-4">
+              {/* <div className="absolute bottom-6 left-6 glass-card p-4">
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-2xl font-semibold text-gradient-orange">
                     $490
@@ -113,20 +116,20 @@ export default function Hero() {
                 <p className="text-gray-400 text-xs font-medium">
                   Todas las variedades
                 </p>
-              </div>
+              </div> */}
 
               {/* Quality badge - glass card */}
-              <div className="absolute top-6 right-6 glass-card p-4 text-center">
+              {/* <div className="absolute top-6 right-6 glass-card p-4 text-center">
                 <div className="text-2xl font-semibold text-gradient-orange">
                   24/7
                 </div>
                 <div className="text-gray-500 text-xs font-medium">Disponible</div>
-              </div>
+              </div> */}
 
               {/* Floating ingredient tag */}
-              <div className="absolute top-1/2 -right-4 glass-card px-3 py-2 hidden lg:block">
+              {/* <div className="absolute top-1/2 -right-4 glass-card px-3 py-2 hidden lg:block">
                 <span className="text-xs text-gray-400">🤖 Con IA</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

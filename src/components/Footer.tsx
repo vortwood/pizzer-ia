@@ -1,11 +1,14 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="relative py-12 md:py-16 border-t border-white/5 overflow-hidden section-dark">
+    <footer
+      id="footer"
+      className="relative py-12 md:py-16 border-t border-white/5 overflow-hidden section-dark"
+    >
       {/* Background gradient orb */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-orange-500/5 rounded-full blur-3xl" />
 
@@ -18,18 +21,19 @@ export default function Footer() {
               alt="Pizzer IA"
               width={180}
               height={60}
-              className="h-12 w-auto invert"
+              className="h-24 w-auto invert"
             />
           </Link>
 
           {/* Copyright */}
           <div className="text-center order-last md:order-none">
             <p className="text-gray-500 text-sm mb-2">
-              Copyright © {currentYear}. Todos los derechos reservados por{' '}
+              Copyright © {currentYear}. Todos los derechos reservados por{" "}
               <span className="text-gradient-orange font-medium">PizzerIA</span>
             </p>
             <p className="text-gray-600 text-xs">
-              Máquinas expendedoras de pizza 24/7 | Maldonado • Punta del Este • Uruguay
+              Máquinas expendedoras de pizza 24/7 | Maldonado • Punta del Este •
+              Uruguay
             </p>
           </div>
 

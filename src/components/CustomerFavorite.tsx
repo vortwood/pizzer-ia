@@ -14,7 +14,8 @@ const pizzas = [
   {
     id: 1,
     name: "Muzzarella",
-    description: "Salsa de tomate, muzzarella de calidad, orégano. La clásica de siempre, perfecta para cualquier momento.",
+    description:
+      "Salsa de tomate, muzzarella de calidad, orégano. La clásica de siempre, perfecta para cualquier momento.",
     price: 490,
     image: "/images/pizza-margherita.jpg",
     category: "clasicas",
@@ -23,7 +24,8 @@ const pizzas = [
   {
     id: 2,
     name: "Napolitana",
-    description: "Salsa de tomate, muzzarella, tomate en rodajas, ajo, orégano. Sabor tradicional argentino.",
+    description:
+      "Salsa de tomate, muzzarella, tomate en rodajas, ajo, orégano. Sabor tradicional argentino.",
     price: 490,
     image: "/images/pizza-neapolitan.jpg",
     category: "clasicas",
@@ -32,7 +34,8 @@ const pizzas = [
   {
     id: 3,
     name: "Pepperoni",
-    description: "Salsa de tomate, muzzarella, pepperoni premium. Ideal para los amantes del picante suave.",
+    description:
+      "Salsa de tomate, muzzarella, pepperoni premium. Ideal para los amantes del picante suave.",
     price: 490,
     image: "/images/pizza-pepperoni.jpg",
     category: "clasicas",
@@ -41,7 +44,8 @@ const pizzas = [
   {
     id: 4,
     name: "Fugazzeta",
-    description: "Muzzarella, cebolla salteada. Sabor único y auténtico, perfecta para fanáticos del queso.",
+    description:
+      "Muzzarella, cebolla salteada. Sabor único y auténtico, perfecta para fanáticos del queso.",
     price: 490,
     image: "/images/pizza-cheese.jpg",
     category: "especiales",
@@ -50,7 +54,8 @@ const pizzas = [
   {
     id: 5,
     name: "Jamón y Morrones",
-    description: "Salsa de tomate, muzzarella, jamón cocido, morrones asados. Combinación perfecta y equilibrada.",
+    description:
+      "Salsa de tomate, muzzarella, jamón cocido, morrones asados. Combinación perfecta y equilibrada.",
     price: 490,
     image: "/images/pizza-hawaiian.jpg",
     category: "especiales",
@@ -59,7 +64,8 @@ const pizzas = [
   {
     id: 6,
     name: "Cuatro Quesos",
-    description: "Muzzarella, provolone, parmesano, queso azul. Para los verdaderos amantes del queso.",
+    description:
+      "Muzzarella, provolone, parmesano, queso azul. Para los verdaderos amantes del queso.",
     price: 490,
     image: "/images/pizza-veggie.jpg",
     category: "especiales",
@@ -68,20 +74,22 @@ const pizzas = [
   {
     id: 7,
     name: "Muzzarella Sin Gluten",
-    description: "Masa apta para celíacos, salsa de tomate, muzzarella, orégano. Rico y seguro para vos.",
+    description:
+      "Masa apta para celíacos, salsa de tomate, muzzarella, orégano. Rico y seguro para vos.",
     price: 490,
     image: "/images/pizza-margherita.jpg",
     category: "singluten",
-    badge: "🌾 Sin Gluten",
+    badge: "Sin Gluten",
   },
   {
     id: 8,
     name: "Napolitana Sin Gluten",
-    description: "Masa sin gluten, salsa de tomate, muzzarella, tomate, ajo. Sabor auténtico para celíacos.",
+    description:
+      "Masa sin gluten, salsa de tomate, muzzarella, tomate, ajo. Sabor auténtico para celíacos.",
     price: 490,
     image: "/images/pizza-sicilian.jpg",
     category: "singluten",
-    badge: "🌾 Sin Gluten",
+    badge: "Sin Gluten",
   },
 ];
 
@@ -112,10 +120,11 @@ export default function CustomerFavorite() {
             Todas a <span className="text-gradient-orange">$490</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            Pizzas clásicas, especiales y opciones sin gluten. Todas al mismo precio,
-            horneadas al momento en nuestra máquina expendedora automática.
+            Pizzas clásicas, especiales y opciones sin gluten. Todas al mismo
+            precio, horneadas al momento en nuestra máquina expendedora
+            automática.
             <span className="block mt-2 text-orange-500 font-medium">
-              🌾 Opciones sin gluten disponibles para celíacos
+              Opciones sin gluten disponibles para celíacos
             </span>
           </p>
         </div>
@@ -184,9 +193,7 @@ export default function CustomerFavorite() {
                   <span className="text-2xl font-semibold text-gradient-orange">
                     ${pizza.price}
                   </span>
-                  <span className="text-xs text-gray-500">
-                    Lista en 3min
-                  </span>
+                  <span className="text-xs text-gray-500">Lista en 3min</span>
                 </div>
 
                 {/* Price */}
@@ -228,7 +235,8 @@ export default function CustomerFavorite() {
         {/* Info footer */}
         <div className="text-center mt-16">
           <p className="text-gray-400 text-sm">
-            Todas las pizzas disponibles 24/7 en nuestra máquina expendedora automática
+            Todas las pizzas disponibles 24/7 en nuestra máquina expendedora
+            automática
           </p>
         </div>
       </div>

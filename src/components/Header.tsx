@@ -26,11 +26,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-black/80 backdrop-blur-xl border-b border-white/5"
-          : "bg-transparent"
-      }`}
+      className={`absolute top-0 left-0 right-0 z-50 transition-all duration-500`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -132,16 +128,36 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          className={`md:hidden fixed inset-0 z-[60] w-full h-full bg-black/95 backdrop-blur-xl transition-all duration-500 ${
+            isMenuOpen
+              ? "opacity-100 translate-y-0 visible pointer-events-auto"
+              : "opacity-0 -translate-y-4 invisible pointer-events-none"
           }`}
         >
-          <nav className="py-4 space-y-1">
+          <button
+            aria-label="Cerrar menú"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-200 hover:text-white hover:bg-white/10 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M6 6l12 12M6 18L18 6" />
+            </svg>
+          </button>
+          <nav className="flex flex-col items-center justify-center w-full h-full gap-5 px-8 text-xl">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="block px-4 py-3 rounded-xl text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-300"
+                className="w-full text-center px-4 py-4 rounded-xl text-gray-100 hover:text-white hover:bg-white/10 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
